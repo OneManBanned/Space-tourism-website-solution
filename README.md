@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://www.frontendmentor.io/solutions/space-tourism-website-solution-NVYDp0IfAy)
-- Live Site URL: [](https://onemanbanned.github.io/Space-tourism-website-solution/index.html)
+- Solution URL: [https://www.frontendmentor.io/solutions/space-tourism-website-solution-NVYDp0IfAy](https://www.frontendmentor.io/solutions/space-tourism-website-solution-NVYDp0IfAy)
+- Live Site URL: [https://onemanbanned.github.io/Space-tourism-website-solution/index.html](https://onemanbanned.github.io/Space-tourism-website-solution/index.html)
 
 ### Built with
 
