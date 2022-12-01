@@ -1,0 +1,214 @@
+@use '../abstracts/breakpoints' as *;
+
+.large-button {
+    font-size: 2rem;
+    position: relative;
+    display: inline-grid;
+    z-index: 1;
+    text-decoration: none;
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    padding: 0 2em;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        text-decoration: none;
+        background-color: hsl(0, 0%, 100%, .15);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        padding: 0 6em;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 500ms linear, transform 750ms ease-in;
+    }
+
+    &:hover::after,
+    &:focus::after {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// Primary header
+
+.logo {
+    margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary-navigation {
+    --gap: clamp(2rem, 5vw, 3rem);
+    --underline-gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: hsla(230 35% 5% / .95);
+
+    a {
+        text-decoration: none;
+
+        span {
+            font-weight: 700;
+            margin-right: .5em;
+        }
+    }
+
+    @supports(backdrop-filter: blur(1.5rem)) {
+        background: hsla(0, 0%, 100%, 0.05);
+        backdrop-filter: blur(1.5rem);
+    }
+
+    @include mb {
+        --underline-gap: .5rem;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        list-style: none;
+        padding: min(20rem, 10vh) 2rem;
+        margin: 0;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 500ms ease-in-out;
+
+        &[data-visible="true"] {
+            transform: translateX(0);
+        }
+
+        &.underline-indicators>.active {
+            border: none;
+        }
+    }
+}
+
+@media (min-width: 35em) and (max-width: 44.999em) {
+    .primary-navigation a>span {
+        display: none;
+    }
+
+}
+
+@include tb {
+    .primary-navigation {
+        padding-inline: clamp(3rem, 7vw, 7rem);
+    }
+}
+
+@include dt {
+    .primary-header:after {
+        content: '';
+        display: block;
+        position: relative;
+        height: 1px;
+        width: 100%;
+        margin-right: -2.5rem;
+        background-color: hsla(0, 0%, 100%, .25);
+        order: 1;
+    }
+
+    nav {
+        order: 2;
+    }
+
+    .primary-navigation {
+        margin-block: 2rem;
+    }
+}
+
+.mobile-nav-toggle {
+    display: none;
+
+    @include mb {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 1rem;
+        top: 2rem;
+        background: transparent;
+        background-image: url('../../assets/shared/icon-hamburger.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border: 0;
+
+        &[aria-expanded="true"] {
+            background-image: url('../../assets/shared/icon-close.svg');
+        }
+
+        &:focus-visible {
+            outline: 5px solid white;
+            outline-offset: 5px;
+        }
+    }
+}
+
+.underline-indicators>* {
+    cursor: pointer;
+    padding: var(--underline-gap, .5rem) 0;
+    border: 0;
+    border-bottom: .2rem solid hsla(0, 0%, 100%, 0);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        border-color: hsla(0, 0%, 100%, .5);
+    }
+
+    &.active,
+    &[aria-selected="true"] {
+        color: hsla(0, 0%, 100%, 1);
+        border-color: hsla(0, 0%, 100%, 1);
+    }
+}
+
+.tab-list {
+    --gap: 2rem;
+
+}
+
+.dot-indicators>* {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: .5em;
+    background-color: hsla(0, 0%, 100%, .25);
+
+    &:hover,
+    &:focus {
+        background-color: hsla(0, 0%, 100%, .5);
+    }
+
+    &[aria-selected="true"] {
+        background-color: hsla(0, 0%, 100%);
+    }
+}
+
+.number-indicators>* {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    height: 2.25em;
+    width: 2.25em;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(230 35% 5%);
+    border: 2px solid hsla(0, 0%, 100%, .25);
+
+    &:hover,
+    &:focus {
+        border: 2px solid hsla(0, 0%, 100%);
+
+    }
+
+    &[aria-selected="true"] {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(230 35% 5%);
+    }
+}

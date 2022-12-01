@@ -1,0 +1,27 @@
+@use '../base/' as *;
+
+// Colors
+
+.bg-dark {
+    background-color: hsl($clr-dark);
+}
+
+.bg-accent {
+    background-color: hsl($clr-light);
+}
+
+.text-white {
+    color: hsl($clr-white);
+}
+
+.text-dark {
+    color: hsl($clr-dark);
+}
+
+.text-accent {
+    color: hsl($clr-light);
+}
+
+.bg-white {
+    background-color: hsl($clr-white);
+}

@@ -1,0 +1,121 @@
+@use '../base/' as *;
+@use './breakpoints.scss' as *;
+// Typography
+
+
+.ff-serif {
+    font-family: $ff-serif;
+}
+
+.ff-sans-cond {
+    font-family: $ff-sans-cond;
+}
+
+.ff-sans-normal {
+    font-family: $ff-sans-normal;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 4.75px;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+    letter-spacing: 2.35px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.fs-900 {
+    font-size: 5rem;
+
+
+    @include tb {
+        font-size: 9.375rem;
+    }
+
+    @include dt {
+        font-size: 9.375rem;
+    }
+}
+
+.fs-800 {
+    font-size: 3.5rem;
+
+    @include tb {
+        font-size: 5rem;
+    }
+
+    @include dt {
+        font-size: 6.25rem;
+    }
+}
+
+.fs-700 {
+    font-size: 1.5rem;
+
+    @include tb {
+        font-size: 2.5rem;
+    }
+
+    @include dt {
+        font-size: 3.5rem;
+    }
+}
+
+.fs-600 {
+    font-size: 1rem;
+
+    @include tb {
+        font-size: 1.5rem;
+    }
+
+    @include dt {
+        font-size: 2rem;
+    }
+}
+
+.fs-500 {
+    font-size: 1rem;
+
+    @include tb {
+        font-size: 1.25rem;
+    }
+
+    @include dt {
+        font-size: 1.75rem;
+    }
+}
+
+.fs-400 {
+    font-size: 0.9375rem;
+
+    @include tb {
+        font-size: 1rem;
+    }
+
+    @include dt {
+        font-size: 1.125rem;
+    }
+}
+
+.fs-300 {
+    font-size: 1rem;
+}
+
+.fs-200 {
+    font-size: 0.875rem;
+}
+
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}

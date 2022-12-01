@@ -1,0 +1,25 @@
+$desktop: 45em;
+$tablet: 35em;
+
+@mixin mb {
+    @media (max-width: $tablet) {
+        @content
+    }
+
+}
+
+;
+
+@mixin tb {
+    @media (min-width: $tablet) {
+        @content
+    }
+}
+
+;
+
+@mixin dt {
+    @media (min-width: $desktop) {
+        @content
+    }
+}
